@@ -1,5 +1,5 @@
 body {
-    background-color: lightblue;
+    /*background-color: lightblue;*/
     color: red;
 }
 
@@ -46,5 +46,6 @@ a:focus {
 
 h2 {
     border-bottom: 1px solid darkblue;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
