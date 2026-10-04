@@ -1,6 +1,7 @@
 body {
     background-color: lightblue;
     color: red;
+    min-width: 320px;
 }
 
 
@@ -83,4 +84,21 @@ h2 {
 
 .change #bar3 {
   transform: translate(0, -11px) rotate(45deg);
+}
+/* --- END ---*/
+
+/* Add media query to generate responsive layout */
+@media screen and (max-width: 480px) {
+    /* Mobile phone in portrait layout */
+    /* Hide nav */
+    #main-menu-navigation {
+        display: none;
+    }
+}
+
+@media (max-width: 800px) and (pointer: coarse) {
+    /*Table or phone landscape layout */
+    #main-menu-navigation {
+        background-color: red;
+    }
 }
