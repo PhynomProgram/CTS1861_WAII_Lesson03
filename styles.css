@@ -1,28 +1,20 @@
 body {
-    background-color: lightblue;
-    color: red;
     min-width: 320px;
 }
 
-
-.section {
-    color: darkblue;
-    background-color: white;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
-    padding: 30px;
-    border-radius: 20px;
-    width: 60vw;
-    margin: 30px auto;
-    transition: .2s ease-in-out;
+p {
+    font-family: Calibri;
+    font-size: 18px;
 }
 
-.section:hover {
-    transform: scale(1.03);
-    
-}
-
+/* Header */
 #header {
-
+    box-sizing: border-box;
+    background-color: darkblue;
+    color: white;
+    width: 60vw;
+    margin: 0 auto;
+    padding: 30px;
 }
 
 #main-menu-navigation {
@@ -51,25 +43,45 @@ a:focus {
   text-decoration: none;
   color: inherit;
 }
+/* --- END --- */
 
+/* Main Sections */
 h2 {
     border-bottom: 1px solid darkblue;
     font-family: Arial, Helvetica, sans-serif;
 }
+
+.section {
+    color: darkblue;
+    background-color: white;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+    padding: 30px;
+    width: 60vw;
+    margin: 30px auto;
+    transition: .2s ease-in-out;
+}
+
+.section:hover {
+    transform: scale(1.03);    
+}
+
+/* --- END --- */
 
 /* Hamburger Menu Structure */
 #menu-bars-container {
   display: inline-block;
   cursor: pointer;
   position: absolute;
+  top: 20px;
   right: 0;
   margin: 0 20px;
+  display: none;
 }
 
 #bar1, #bar2, #bar3 {
   width: 35px;
   height: 5px;
-  background-color: darkblue;
+  background-color: white;
   margin: 6px 0;
   transition: 0.7s;
 }
@@ -88,17 +100,20 @@ h2 {
 /* --- END ---*/
 
 /* Add media query to generate responsive layout */
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 768px) {
     /* Mobile phone in portrait layout */
+    /* Expand Header */
+    #header {
+        width: 100vw;
+    }
     /* Hide nav */
     #main-menu-navigation {
         display: none;
     }
-}
-
-@media (max-width: 800px) and (pointer: coarse) {
-    /*Table or phone landscape layout */
-    #main-menu-navigation {
-        background-color: red;
+    /* Show hamburger menu icon */
+    #menu-bars-container {
+        display: block;
     }
 }
+
+
