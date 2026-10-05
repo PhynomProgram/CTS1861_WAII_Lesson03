@@ -18,6 +18,12 @@ p {
     padding: 30px;
 }
 
+h1 {
+    font-family: Helvetica;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
 #main-menu-navigation {
     box-sizing: border-box;
     background-color: darkblue;
@@ -25,11 +31,12 @@ p {
 }
 
 #main-menu-navigation a {
+    font-family: Arial, Helvetica, sans-serif;
     text-decoration: none;
     color: inherit;
+    margin: 0 12px;
 }
 
-#main-menu-navigation a:hover, 
 #main-menu-navigation a:active  {
   text-decoration: none;
   color: inherit;
@@ -39,11 +46,8 @@ a:visited {
   color: inherit;
 }
 
-a:hover,
-a:active,
-a:focus {
-  text-decoration: none;
-  color: inherit;
+#main-menu-navigation a:hover {
+    color: lightblue;
 }
 /* --- END --- */
 
@@ -61,14 +65,41 @@ h2 {
     padding: 30px;
     width: 80vw;
     margin: 30px auto;
-    transition: .2s ease-in-out;
-}
-
-.section:hover {
-    transform: scale(1.03);    
 }
 
 /* --- END --- */
+
+/* Services */
+#services {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: space-evenly;
+    padding: 30px;
+   
+}
+#services li {
+    display: block;
+    box-sizing: border-box;
+    border: 2px darkblue solid;
+    box-shadow: 4px 2px 10px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    list-style: none;
+    padding: 15px;
+    height: 180px;
+    width: 180px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    align-content: center;
+    cursor: pointer;
+    transition: .3s;
+}
+#services li:hover {
+    scale: 1.06;
+    
+}
+/* --- END ---*/
 
 /* Hamburger Menu Structure */
 #menu-bars-container {
@@ -102,6 +133,18 @@ h2 {
 }
 /* --- END ---*/
 
+/* Footer */
+#footer {
+    box-sizing: border-box;
+    width: 80vw;
+    margin: 0 auto;
+    padding: 10px 0;
+    background-color: darkblue;
+    color: white;
+    text-align: center;
+}
+/* --- END --- */
+
 /* Add media query to generate responsive layout */
 @media screen and (max-width: 768px) {
     /* Mobile phone in portrait layout */
@@ -114,12 +157,55 @@ h2 {
         display: none;
     }
     /* Hide nav */
-    #main-menu-navigation {
-        display: none;
+    .main-nav {
+        height: 0;
+        width: 0;
+        opacity: 0;
     }
     /* Show hamburger menu icon */
     #menu-bars-container {
         display: block;
+        z-index: 1;
+    }
+    /* Full-screen nav */
+    /* Work with openNavMenu function */
+    .no-scroll {
+        overflow: hidden;
+        height: 100vh;
+    }
+    .full-screen-nav {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        justify-content: space-evenly;
+        box-sizing: border-box;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: red;
+        width: 100vw;
+        height: 100vh;
+        z-index: 0;
+        margin: auto;
+        padding: 0;
+        opacity: 1;
+        transition: .3s;
+    }
+    .full-screen-nav a {
+        margin: 20px;
+        font-size: 30px;
+        text-align: center;
+    }
+    /* Services */
+    #services {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        
+    }
+    /* Footer */
+    #footer {
+        width: 100vw;
     }
 }
 
